@@ -3,8 +3,238 @@ extends _layout
 block vars
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'HOME'}
 block content_block
-	section.start(style="background: url('../i/start.jpg') center/cover no-repeat") 
+	section.hero
 		.section_in 
-			.start_row 
-				h1 Start development by Arkada Web Studio
-	
+			.hero_main 
+				.hero_main_top 
+					.hero_main_content
+						h1 Готовые перевозные бани с доставкой
+						p от 199 000 рублей
+						span Получите расчет стоимости, строительства и отделки бани прямо сейчас!
+					.hero_main_btn 
+						button(type="button") Рассчитать стоимость
+				.hero_main_bottom 
+					ul 
+						li
+							img(src="i/board.png", alt="")
+							.hero_bottom_content  
+								h3 Собственное производство
+								p Производство "под ключ" по вашим требованиям.
+						li 
+							img(src="i/truck.png", alt="")
+							.hero_bottom_content
+								h3 Без строительных работ на участке
+								p Доставка бани на нужное место манипулятором.
+						li
+							img(src="i/home.png", alt="")
+							.hero_bottom_content  
+								h3 Отличное решение для вашего участка 
+								p Бани просты в эксплуатации и сравнительно недорогие.
+	section.catalog 
+		.section_in 
+			.catalog_main_w 
+				.catalog_head 
+					h2 Бани под ключ
+				.catalog_main 
+					ul
+						-for(i = 0; i < 6; i++)
+							li 
+								.catalog_item_img 
+									img(src="i/galery/catalog.png", alt="")
+								.catalog_item_content
+									.catalog_item_txt 
+										h3 Баня из бруса “Название бани”
+									.catalog_info 
+										ul 
+											li 
+												p Площадь:
+												span 20 м2
+											li 
+												p Материал стен:
+												span Брус
+										.catalog_price 
+											p 200 000 руб
+								.catalog_btn_group 
+									.catalog_btn_order
+										button(type=button) Заказать
+									.catalog_btn_detailed
+										button(type=button) Подробнее
+				.catalog_btn
+					.catalog_btn_r
+						button(type="button") Показать больше
+					.catalog_btn_l
+						button(type="button")
+							img(src="i/icons/arrowbottom.png", alt="")
+	section.order
+		.section_in 
+			.order_main
+				.order_img 
+					img(src="i/homeBG.png", alt="")
+				.order_form_w 
+					.order_form_head
+						h3 Не смогли найти
+						p подходящую баню?
+						span Оставьте заявку, наш менеджер найдет решение!
+					form.order_form
+						.order_form_input
+							input(type="text" placeholder="Ваше имя")
+						.order_form_input
+							input(type="tel" placeholder="Ваш номер телефона")
+						.order_form_btn 
+							button(type="submit") Отправить
+						.order_policy!='Отправляя форму, вы соглашаетесь с <a href="#"> политикой конфиденциальности</a>.' 
+	section.scheme
+		.section_in
+			.scheme_main_w 
+				.scheme_head 
+					h2 Схема работы с нами
+				.scheme_main 
+					ul 
+						li 
+							.scheme_main_img 
+								img(src="i/icons/call.png", alt="")
+							.scheme_main_txt 
+								p Заявка
+								span Вы оставляете заявку на нашем сайте или звоните нам по телефону +7 000 000 00 00
+						li 
+							.scheme_main_ar
+								img(src="i/icons/arrow.svg", alt="")
+						li 
+							.scheme_main_img 
+								img(src="i/icons/pencil.png", alt="")
+							.scheme_main_txt 
+								p Договор
+								span Мы связываемся с вами и обговариваем все условия. Заключаем договор и вы вносите предоплату.
+						li
+							.scheme_main_ar
+								img(src="i/icons/arrow.svg", alt="")
+						li 
+							.scheme_main_img 
+								img(src="i/icons/key.png", alt="")
+							.scheme_main_txt 
+								p Изготовление
+								span Мы изготавливаем баню на нашем производстве. Согласовываем время и дату доставки бани.
+						li
+							.scheme_main_ar 
+								img(src="i/icons/arrow.svg", alt="")
+						li 
+							.scheme_main_img 
+								img(src="i/icons/ok.png", alt="")
+							.scheme_main_txt 
+								p Сдача
+								span Мы привозим и устанавливаем баню у вас на участке. Проверяем качество бани. Вы оплачиваете оставшуюся сумму.
+	section.qwestion
+		.section_in
+			.qwestion_main
+				.qwestion_main_left 
+					h2 Часто задаваемые вопросы
+					.qwestion_main_img 
+						img(src="i/galery/bucket.png", alt="")
+				.qwestion_main_right 
+					ul 
+						li 
+							.qwestion_content 
+								h4 Кто оплачивает услуги крана - манипулятора?
+								button(type="button")
+									img(src="i/icons/arrowtop.png", alt="") 
+						.qwestion_txt
+							p Мы полностью берем на себя разгрузку бани. Ничего сверх оговоренной стоимости бани Вам доплачивать не нужно.
+						li 
+							.qwestion_content 
+								h4 Кто оплачивает услуги крана - манипулятора?
+								button(type="button")
+									img(src="i/icons/arrowbottom.png", alt="")
+						li 
+							.qwestion_content 
+								h4 Кто оплачивает услуги крана - манипулятора?
+								button(type="button")
+									img(src="i/icons/arrowbottom.png", alt="")
+						li 
+							.qwestion_content 
+								h4 Кто оплачивает услуги крана - манипулятора?
+								button(type="button")
+									img(src="i/icons/arrowbottom.png", alt="")
+	section.reviews
+		.section_in 
+			.reviews_main
+				.reviews_content 
+					h2 Отзывы клиентов
+					.reviews_slider_nav 
+						.reviews_slider_btn_previews 
+							button(type="button")
+								img(src="i/icons/arrowprewios.png", alt="")
+						.reviews_slider_btn_next 
+							button(type="button")
+								img(src="i/icons/arrownext.png", alt="")
+				.reviews_slider_w
+					.reviews_slider.swiper 
+						.swiper-wrapper
+							.swiper-slide 
+								.reviews_slide 
+									a(href="i/galery/reviews.png") 
+										img(src="i/galery/reviews.png", alt="")
+							.swiper-slide 
+								.reviews_slide 
+									a(href="i/galery/reviews.png") 
+										img(src="i/galery/reviews.png", alt="")
+							.swiper-slide 
+								.reviews_slide 
+									a(href="i/galery/reviews.png") 
+										img(src="i/galery/reviews.png", alt="")
+							.swiper-slide 
+								.reviews_slide 
+									a(href="i/galery/reviews.png") 
+										img(src="i/galery/reviews.png", alt="")
+							.swiper-slide 
+								.reviews_slide 
+									a(href="i/galery/reviews.png") 
+										img(src="i/galery/reviews.png", alt="")
+							.swiper-slide 
+								.reviews_slide 
+									a(href="i/galery/reviews.png") 
+										img(src="i/galery/reviews.png", alt="")
+							.swiper-slide 
+								.reviews_slide 
+									a(href="i/galery/reviews.png") 
+										img(src="i/galery/reviews.png", alt="")
+							.swiper-slide 
+								.reviews_slide 
+									a(href="i/galery/reviews.png") 
+										img(src="i/galery/reviews.png", alt="")
+							.swiper-slide 
+								.reviews_slide 
+									a(href="i/galery/reviews.png") 
+										img(src="i/galery/reviews.png", alt="")
+						.reviews_pagination
+	section.contact 
+		.contact_main_w
+			.contact_map 
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9119d8b865307a4592c83f4e02d4340c97ebb5506ca61d5b5eb298f88fb6b559&amp;width=100%&amp;height=976&amp;lang=ru_RU&amp;scroll=false"></script>
+			.contact_main
+				h2 Контакты
+				.contact_info 
+					ul 
+						li 
+							p Телефон
+							a(href="#")
+								span +7 996 975 69 19
+						li 
+							p Почта
+							a(href="#")
+								span mail@mail.ru
+						li 
+							p Адрес
+							span Московская область, г. Наро-Фоминск
+				.contact_bottom 
+					.contact_bottom_btn 
+						button(type="button") Оставить заявку
+					.contact_bottom_social 
+						ul 
+							li
+								.contact_social_wh
+									a(href="#")
+										img(src="i/icons/whatsapp.png", alt="") 
+							li
+								.contact_social_tg 
+									a(href="#")
+										img(src="i/icons/telegram.png", alt="")

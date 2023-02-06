@@ -1,5 +1,5 @@
 // Global 
-$header: 6rem;
+$header: 14rem;
 $footer: 22.8rem;
 
 // Mobile
@@ -8,19 +8,22 @@ $footer_mob: 10rem;
 
 //---------------------------------------------fonts
 $font_path: "../fonts/";
-$font_1: 'Roboto-Light', sans-serif;
-$font_11: 'Roboto-Regular', sans-serif;
-$font_2: 'Roboto-Medium', serif;
-$font_3: 'Roboto-Bold', serif;
+$font_1: 'Raleway', sans-serif;
+$font_2: 'OpenSans', serif;
 
 $font_size_base: 1.8rem;
 //---------------------------------------------fonts###
 
 //---------------------------------------------colors
+$trans: transparent;
 $white: #fff;
 $black: #000;
-$dark: #282828;
-$trans: transparent;
+
+
+$dark: #262626;
+$grey: rgba(38, 38, 38, 0.2);
+$dark-orange: #DC5F05;
+$gradient: linear-gradient(229.65deg, #FFD788 -14.31%, #DC5F05 76.5%);
 
 
 
@@ -40,7 +43,7 @@ $z-index: (
 //---------------------------------------------z-index###
 
 //---------------------------------------------layout
-$page_width: 132.1rem;
+$page_width: 153rem;
 
 //---------------------------------------------layout###
 

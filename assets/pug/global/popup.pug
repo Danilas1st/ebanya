@@ -1,0 +1,52 @@
+.popup.popup_submit(data-window="submits")
+	.popup_form_bg.close_popups
+	.popup_form_w
+		.popup_close.close_popups 
+			button(type="button")
+				+icon('close')
+		.popup_form_head 
+			h3 Не смогли найти
+			p подходящую баню?
+			span Оставьте заявку, наш менеджер найдет решение!
+		form.popup_form
+			.popup_form_input
+				input(type="text" placeholder="Ваше имя")
+			.popup_form_input
+				input(type="tel" placeholder="Ваш номер телефона")
+			.popup_form_btn 
+				button(type="submit") Отправить
+		.popup_policy!='Отправляя форму, вы соглашаетесь с <a href="#"> политикой конфиденциальности</a>.'
+
+
+
+.popup.popup_info 
+	.popup_form_bg.close_popups 
+	.popup_form_i 
+		.popup_close.close_popups 
+			button(type="button")
+				+icon('close') 
+		.popup_head
+			h3 Баня из бруса “Название бани”
+			.popup_inform
+				ul 
+					li 
+						p Площадь:
+						span 20 м2
+					li 
+						p Материал стен:
+						span Брус
+			.popup_price 
+				p 200 000 руб
+		.popup_base
+			.popup_txt 
+				p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+				span Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.
+			.popup_galery 
+				ul 
+					-for(i = 0; i < 6; i++)
+						li 
+							a(href="#")
+								img(src="i/galery/catalog.png", alt="") 
+			.popup_form_i_btn
+				button(type="button") Заказать
+

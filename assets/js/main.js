@@ -247,6 +247,59 @@ async function maps(street, city, size) {
 
 
 
+function popup() {
+	let openBtn = document.querySelectorAll('.catalog_btn_order')
+	let closePopup = document.querySelectorAll('.close_popups')
+	let popup = document.querySelector('.popup')
+
+	openBtn.forEach((item) => {
+		item.addEventListener('click', function() {
+			popup.classList.add('active')
+		})
+	});
+	closePopup.forEach(item => {
+		item.addEventListener('click', function() {
+			popup.classList.remove('active')
+		})
+	});
+
+}
+
+
+
+
+const reviewsSlider = new Swiper('.reviews_slider', { 
+	speed: 400,
+	breakpoints: {
+		320: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+			freeMode: false,
+    },
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+			freeMode: false,
+    },
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+			freeMode: false,
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 40
+    }
+	},
+	navigation: {
+    nextEl: '.reviews_slider_btn_next',
+    prevEl: '.reviews_slider_btn_previews',
+  },
+	pagination: {
+    el: '.reviews_pagination',
+    type: 'bullets',
+  },
+});
 
 
 

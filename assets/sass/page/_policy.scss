@@ -25,7 +25,7 @@
 .policy_list {
 	li>p {
 		font-size: 2.2rem;
-		font-family: $font_3;
+		font-family: $font_2;
 		margin-bottom: 2rem;
 		@include bp($point_2) {
 			font-size: 1.8rem;
@@ -61,7 +61,7 @@
 .sub_items>p {
 	margin-bottom: 2rem;
 	font-size: 1.8rem;
-	font-family: $font_3;
+	font-family: $font_2;
 }
 .end_subtitle {
 	font-size: 1.6rem!important;

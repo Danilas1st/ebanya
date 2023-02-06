@@ -1,8 +1,22 @@
 .footer {
-	width: 100%;
-	min-height: $footer;
-	flex: 0 0 auto;
-	will-change: transform;
-	position: relative;
-	display: none;
+}
+.section_in {
+}
+.footer_main {
+	padding: 0 20rem;
+	ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	li {
+		display: flex;
+	}
+}
+.footer_protect {
+	margin-right: 6rem;
+}
+.footer_policy {
+}
+.footer_arkada {
 }
