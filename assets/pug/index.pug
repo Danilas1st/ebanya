@@ -11,7 +11,7 @@ block content_block
 						h1 Готовые перевозные бани с доставкой
 						p от 199 000 рублей
 						span Получите расчет стоимости, строительства и отделки бани прямо сейчас!
-					.hero_main_btn 
+					.hero_main_btn.trigger(data-target="form") 
 						button(type="button") Рассчитать стоимость
 				.hero_main_bottom 
 					ul 
@@ -55,9 +55,9 @@ block content_block
 										.catalog_price 
 											p 200 000 руб
 								.catalog_btn_group 
-									.catalog_btn_order
+									.catalog_btn_order.trigger(data-target="form")
 										button(type=button) Заказать
-									.catalog_btn_detailed
+									.catalog_btn_detailed.trigger(data-target="detail")
 										button(type=button) Подробнее
 				.catalog_btn
 					.catalog_btn_r
@@ -132,32 +132,20 @@ block content_block
 						img(src="i/galery/bucket.png", alt="")
 				.qwestion_main_right 
 					ul 
-						li 
-							.qwestion_content 
-								h4 Кто оплачивает услуги крана - манипулятора?
-								button(type="button")
-									img(src="i/icons/arrowtop.png", alt="") 
-						.qwestion_txt
-							p Мы полностью берем на себя разгрузку бани. Ничего сверх оговоренной стоимости бани Вам доплачивать не нужно.
-						li 
-							.qwestion_content 
-								h4 Кто оплачивает услуги крана - манипулятора?
-								button(type="button")
-									img(src="i/icons/arrowbottom.png", alt="")
-						li 
-							.qwestion_content 
-								h4 Кто оплачивает услуги крана - манипулятора?
-								button(type="button")
-									img(src="i/icons/arrowbottom.png", alt="")
-						li 
-							.qwestion_content 
-								h4 Кто оплачивает услуги крана - манипулятора?
-								button(type="button")
-									img(src="i/icons/arrowbottom.png", alt="")
+						-for(i = 0; i < 4; i++)
+							li 
+								.qwestion_item 
+									.qwestion_item_head
+										h4 Кто оплачивает услуги крана - манипулятора?
+										.qwestion_btn
+											button(type="button")
+												img(src="i/icons/arrowbottom.png", alt="") 
+									.qwestion_item_bottom
+										p Мы полностью берем на себя разгрузку бани. Ничего сверх оговоренной стоимости бани Вам доплачивать не нужно.
 	section.reviews
 		.section_in 
 			.reviews_main
-				.reviews_content 
+				.reviews_head 
 					h2 Отзывы клиентов
 					.reviews_slider_nav 
 						.reviews_slider_btn_previews 
@@ -169,42 +157,11 @@ block content_block
 				.reviews_slider_w
 					.reviews_slider.swiper 
 						.swiper-wrapper
-							.swiper-slide 
-								.reviews_slide 
-									a(href="i/galery/reviews.png") 
-										img(src="i/galery/reviews.png", alt="")
-							.swiper-slide 
-								.reviews_slide 
-									a(href="i/galery/reviews.png") 
-										img(src="i/galery/reviews.png", alt="")
-							.swiper-slide 
-								.reviews_slide 
-									a(href="i/galery/reviews.png") 
-										img(src="i/galery/reviews.png", alt="")
-							.swiper-slide 
-								.reviews_slide 
-									a(href="i/galery/reviews.png") 
-										img(src="i/galery/reviews.png", alt="")
-							.swiper-slide 
-								.reviews_slide 
-									a(href="i/galery/reviews.png") 
-										img(src="i/galery/reviews.png", alt="")
-							.swiper-slide 
-								.reviews_slide 
-									a(href="i/galery/reviews.png") 
-										img(src="i/galery/reviews.png", alt="")
-							.swiper-slide 
-								.reviews_slide 
-									a(href="i/galery/reviews.png") 
-										img(src="i/galery/reviews.png", alt="")
-							.swiper-slide 
-								.reviews_slide 
-									a(href="i/galery/reviews.png") 
-										img(src="i/galery/reviews.png", alt="")
-							.swiper-slide 
-								.reviews_slide 
-									a(href="i/galery/reviews.png") 
-										img(src="i/galery/reviews.png", alt="")
+							-for(i = 0; i < 10; i++)
+								.swiper-slide 
+									.reviews_slide 
+										a(href="i/galery/reviews.png") 
+											img(src="i/galery/reviews.png", alt="")
 						.reviews_pagination
 	section.contact 
 		.contact_main_w
@@ -226,7 +183,7 @@ block content_block
 							p Адрес
 							span Московская область, г. Наро-Фоминск
 				.contact_bottom 
-					.contact_bottom_btn 
+					.contact_bottom_btn.trigger(data-target="form")
 						button(type="button") Оставить заявку
 					.contact_bottom_social 
 						ul 

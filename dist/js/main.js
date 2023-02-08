@@ -14,6 +14,7 @@ let $body,
 
 $(document).ready(function ($) {
 	$body = $('body');
+	modal();
 });
 
 $(window).on('load', function () {
@@ -99,9 +100,9 @@ function getRandom(min, max) {
 	return Math.random() * (max - min) + min;
 }
 
-var styles = ['color: red', 'background: black'].join(';');
-var message = 'Developed by KotoFeelGood Arkada-Studio https://arkada-web.ru/';
-console.info('%c%s', styles, message);
+// var styles = ['color: red', 'background: black'].join(';');
+// var message = 'Developed by KotoFeelGood Arkada-Studio https://arkada-web.ru/';
+// console.info('%c%s', styles, message);
 
 
 
@@ -129,72 +130,48 @@ $(document).ready(function() {
 
 
 
-// const btnSubmit = document.querySelectorAll('button[type="submit"]')
-// Array.from(btnSubmit).map((item) => {
-// 	item.addEventListener('click', (e) => {
-// 		e.preventDefault();
-// 		succes('.succes')
-// 	})
-// })
-
-
-// function allDefautAnim(bottom = false, start = '-=30% center', end = 'bottom') {
-// 	const paralaxWrapper = Array.from(document.querySelectorAll('.sec_anim')).map(function(el) {
-// 		const arr = Array.from(el.querySelectorAll('.el_anim')).map(function (item, index) {
-// 			const tl = gsap.timeline();
-// 			ScrollTrigger.create({
-// 				animation: tl,
-// 				trigger: el,
-// 				start: start,
-// 				end: end,
-// 				ease: 'none',
-// 			})
-// 			tl.fromTo(item, {
-// 				y: 100, 
-// 				duration: .4,
-// 				autoAlpha: 0,
-// 			}, {
-// 				y: 0,
-// 				autoAlpha: 1,
-// 				delay: 0.1 + (0.1 * index),
-// 			});
-// 		});
-// 	});
-// }
-
-// function popupForms(pr) {
-
-// 	let popupForms = document.querySelector('.callback')
-// 	let popupFormsTrigger = document.querySelectorAll('.btn_popup')
-// 	let popupFormsClose = document.querySelectorAll('.remove_popup')
-// 	let popupFormsSubmit = popupForms.querySelector('button[type="submit"]')
-// 	const burgerPopup = document.querySelector('.burger')
+function modal() {
+	let popup = document.querySelectorAll('.popup')
+	let btnArray = document.querySelectorAll('.trigger')
 	
-// 	Array.from(popupFormsTrigger).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.add('active');
-// 			win.style.overflow = "hidden";
-// 			win.style.paddingRight = pr; 
-// 			burgerPopup.classList.remove('active')
-// 		})
-// 	})
+	btnArray.forEach((el) => {
+		el.addEventListener('click', function(e) {
+			e.preventDefault();
+			let path = e.currentTarget.dataset.target
+			
+			popup.forEach((el) => {
+				isRemove(el)
+				console.log('Good')
+				if(el.dataset.id == path) {
+					isOpen(el)
+				}
+			})
+			
+		})
+	})
+	
+
+	popup.forEach((pop) => {
+		let remove = pop.querySelectorAll('.remove')
+		remove.forEach(el => {
+			el.addEventListener('click', (e) => {
+				isRemove(pop);
+			})
+		});
+	})
+}
 
 
-// 	Array.from(popupFormsClose).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.remove('active')
-// 			win.style.overflow = "";
-// 			win.style.paddingRight = ""; 
-// 		})
-// 	})
 
-// 	popupFormsSubmit.addEventListener('click', () => {
-// 		popupForms.classList.remove('active')
-// 		win.style.overflow = "";
-// 		win.style.paddingRight = ""; 
-// 		succes('.succes')
-// 	})
-// }
+function isOpen(popup) {
+	document.body.classList.add('fixed')
+	popup.classList.add('active')
+}
+
+function isRemove(popup) {
+	popup.classList.remove('active')
+	document.body.classList.remove('fixed')
+}
 
 
 
@@ -246,44 +223,22 @@ async function maps(street, city, size) {
 }
 
 
-
-function popup() {
-	let openBtn = document.querySelectorAll('.catalog_btn_order')
-	let closePopup = document.querySelectorAll('.close_popups')
-	let popup = document.querySelector('.popup')
-
-	openBtn.forEach((item) => {
-		item.addEventListener('click', function() {
-			popup.classList.add('active')
-		})
-	});
-	closePopup.forEach(item => {
-		item.addEventListener('click', function() {
-			popup.classList.remove('active')
-		})
-	});
-
-}
-
-
-
-
 const reviewsSlider = new Swiper('.reviews_slider', { 
 	speed: 400,
 	breakpoints: {
 		320: {
-      slidesPerView: 1,
-      spaceBetween: 50,
+      slidesPerView: 2,
+      spaceBetween: 20,
 			freeMode: false,
     },
     768: {
-      slidesPerView: 1,
-      spaceBetween: 50,
+      slidesPerView: 4,
+      spaceBetween: 30,
 			freeMode: false,
     },
     1024: {
-      slidesPerView: 1,
-      spaceBetween: 50,
+      slidesPerView: 4,
+      spaceBetween: 30,
 			freeMode: false,
     },
     1200: {
@@ -302,47 +257,61 @@ const reviewsSlider = new Swiper('.reviews_slider', {
 });
 
 
+function accordion(title, content) {
+	// hide all content	
+	let accordionTitle = $(title),
+		accordionContent = $(content);
+	$(accordionContent).hide();
+	
+	$(accordionTitle).on('click', function () {
+		let $this = $(this);
+		$this.parent().toggleClass('active_mod').siblings().removeClass('active_mod');
+		$(accordionContent).slideUp();
+
+		if (!$this.next().is(":visible")) {
+			$this.next().slideDown();
+		}
+	});
+};
+
+accordion('.qwestion_item_head', '.qwestion_item_bottom');
+
+
+
+function succes(success) {
+	$(success).toggleClass('active');
+		setTimeout(function() {
+			$(success).removeClass('active')
+		}, 3000)
+}
+
+function failed(failed) {
+	$(failed).toggleClass('active');
+		setTimeout(function() {
+			$(failed).removeClass('active')
+		}, 3000)
+}
 
 
 
 
+function burgerMobile() {
+	const triggerBurger = document.querySelector('.burger_trigger')
+	const burgerPopup = document.querySelector('.burger')
+	const burgerFail = document.querySelectorAll('.close_burger')
 
+	triggerBurger.addEventListener('click', (e) => {
+		burgerPopup.classList.add('active')
+		if(e.target.classList.contains('burger_trigger')) {
+			e.target.classList.add('active')
+		}
+	})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	burgerFail.forEach(item => {
+		item.addEventListener('click', () => {
+			burgerPopup.classList.remove('active')
+			triggerBurger.classList.remove('active')
+			win.style.overflow = "";
+		})
+	});
+}

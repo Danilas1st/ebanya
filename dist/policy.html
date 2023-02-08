@@ -39,12 +39,13 @@
               <li><a href="#">
                   <p> +7 996 975 69 19</p></a></li>
               <li>
-                <div class="heder_btn"> 
+                <div class="heder_btn trigger" data-target="form">
                   <button type="button">Перезвоните мне</button>
                 </div>
               </li>
             </ul>
           </div>
+          <div class="burger_trigger"> <span> </span><span> </span><span> </span></div>
         </div>
       </div>
     </header>
@@ -268,10 +269,10 @@
     <script src="js/libs.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/main.js"></script>
-    <div class="popup popup_submit" data-window="submits">
-      <div class="popup_form_bg close_popups"></div>
+    <div class="popup popup_submit" data-id="form">
+      <div class="popup_form_bg close_popups remove"></div>
       <div class="popup_form_w">
-        <div class="popup_close close_popups"> 
+        <div class="popup_close close_popups remove"> 
           <button type="button">
             <svg class="icon icon-close ">
               <use xlink:href="i/sprite/sprite.svg#close"></use>
@@ -296,10 +297,10 @@
         <div class="popup_policy">Отправляя форму, вы соглашаетесь с <a href="#"> политикой конфиденциальности</a>.</div>
       </div>
     </div>
-    <div class="popup popup_info"> 
-      <div class="popup_form_bg close_popups"> </div>
+    <div class="popup popup_info" data-id="detail">
+      <div class="popup_form_bg close_popups remove"> </div>
       <div class="popup_form_i"> 
-        <div class="popup_close close_popups"> 
+        <div class="popup_close close_popups remove"> 
           <button type="button">
             <svg class="icon icon-close ">
               <use xlink:href="i/sprite/sprite.svg#close"></use>
@@ -336,7 +337,7 @@
               <li> <a href="#"><img src="i/galery/catalog.png" alt=""></a></li>
             </ul>
           </div>
-          <div class="popup_form_i_btn">
+          <div class="popup_form_i_btn trigger" data-target="form">
             <button type="button">Заказать</button>
           </div>
         </div>

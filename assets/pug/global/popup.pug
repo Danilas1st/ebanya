@@ -1,7 +1,7 @@
-.popup.popup_submit(data-window="submits")
-	.popup_form_bg.close_popups
+.popup.popup_submit(data-id="form")
+	.popup_form_bg.close_popups.remove
 	.popup_form_w
-		.popup_close.close_popups 
+		.popup_close.close_popups.remove 
 			button(type="button")
 				+icon('close')
 		.popup_form_head 
@@ -19,10 +19,10 @@
 
 
 
-.popup.popup_info 
-	.popup_form_bg.close_popups 
+.popup.popup_info(data-id="detail")
+	.popup_form_bg.close_popups.remove 
 	.popup_form_i 
-		.popup_close.close_popups 
+		.popup_close.close_popups.remove 
 			button(type="button")
 				+icon('close') 
 		.popup_head
@@ -47,6 +47,6 @@
 						li 
 							a(href="#")
 								img(src="i/galery/catalog.png", alt="") 
-			.popup_form_i_btn
+			.popup_form_i_btn.trigger(data-target="form")
 				button(type="button") Заказать
 

@@ -3,7 +3,7 @@
 .section_in {
 }
 .footer_main {
-	padding: 0 20rem;
+	padding: 0 20rem 2rem 0;
 	ul {
 		display: flex;
 		justify-content: space-between;
@@ -12,9 +12,27 @@
 	li {
 		display: flex;
 	}
+	@include bp($point_2) {
+		padding: 0 1rem 1rem 0;
+	}
+	@include bp($point_5) {
+		padding: 0;
+		ul {
+			flex-direction: column;
+		}
+		li {
+			display: block;
+		}
+	}
 }
 .footer_protect {
 	margin-right: 6rem;
+	@include bp($point_5) {
+		margin: 0;
+		p {
+			text-align: center;
+		}
+	}
 }
 .footer_policy {
 }

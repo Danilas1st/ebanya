@@ -6,7 +6,7 @@
 	width: 100%;
 	height: 100%;
 	@include z-index(popup);
-	transition: all .3s ease;
+	transition: all .2s ease;
 	opacity: 0;
 	visibility: hidden;
 	&.active {
@@ -20,7 +20,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(0deg, rgba(2, 2, 2, 0.8), rgba(2, 2, 2, 0.8)), #F5F5F5;
+	background: linear-gradient(0deg, rgba(2, 2, 2, 0.8), rgba(2, 2, 2, 0.8)), #f5f5f550;
 }
 .popup_close  {
 	button {
@@ -35,6 +35,13 @@
 	padding: 6rem 8.4rem 8rem 8.4rem;
 	max-width: 64.9rem;
 	align-items: center;
+	border-radius: 1rem;
+	@include bp($point_2) {
+		padding: 3rem 6.4rem;
+	}
+	@include bp($point_5) {
+		padding: 2rem 4.4rem;
+	}
 }
 .popup_close {
 	position: absolute;
@@ -59,7 +66,25 @@
 		font-weight: 600;
 		margin-bottom: 2rem;
 	}
-
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+		p {
+			font-size: 2.5rem
+		}
+	}
+	@include bp($point_5) {
+		h3 {
+			font-size: 1.6rem;
+		}
+		p {
+			font-size: 1.4rem;
+			margin-bottom: 1rem;
+		}
+		span {
+			font-size: 1.3rem;
+			text-align: center
+		}
+	}
 }
 .popup_form {
 }
@@ -77,6 +102,15 @@
 	}
 	&:not(:last-child) {
 		margin-bottom: 1.5rem;
+	}
+	@include bp($point_5) {
+		&:not(:last-child) {
+			margin-bottom: .5rem;
+		}
+		input {
+			padding: 1rem .5rem;
+			font-size: 1.4rem;
+		}
 	}
 }
 .popup_form_btn {
@@ -99,21 +133,37 @@
 				border-radius: .7rem;
 			}
 	}
+	@include bp($point_5) {
+		button {
+			font-size: 1.4rem;
+			padding: 1rem 1.5rem;
+
+		}
+	}
 }
 .popup_policy {
 	font-size: 1.8rem;
 	a {
 		border-bottom: .1rem solid $black;
 	}
+	@include bp($point_2) {
+		text-align: center;
+	}
+	@include bp($point_5) {
+		font-size: 1.5rem;
+	}
 }
-
-
-
 
 
 .popup_info {
 }
 .popup_form_bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, rgba(2, 2, 2, 0.8), rgba(2, 2, 2, 0.8)), #f5f5f55e;
 }
 .close_popups {
 }
@@ -122,8 +172,19 @@
 	max-width: $page_width;
 	padding: 9rem 13rem 9rem 9rem;
 	position: relative;
+	border-radius: 1rem;
+	@include bp($point_2) {
+		padding: 2rem 5rem 1rem 2rem;
+	}
+	@include bp($point_5) {
+		max-width: 35rem;
+		padding: 1rem 1rem 1rem 2rem;
+	}
 }
 .popup_close {
+	button {
+		color: #DC5F05;
+	}
 }
 .icon {
 }
@@ -133,6 +194,16 @@
 	h3 {
 		font-size: 2.5rem;
 		margin-bottom: 3rem;
+		font-family: $font_6;
+	}
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+	}
+	@include bp($point_5) {
+		h3 {
+			font-size: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
 	}
 }
 .popup_inform {
@@ -148,7 +219,22 @@
 	}
 	p {
 		margin-right: 1rem;
-		color: $grey;
+		color: rgba(38, 38, 38, 0.7);
+	}
+	span {
+		font-family: $font_2;
+	}
+	@include bp($point_5) {
+		ul {
+			flex-direction: column;
+			margin-bottom: 1.5rem;
+		}
+		p {
+			font-size: 1.3rem;
+		}
+		span {
+			font-size: 1.3rem;
+		}
 	}
 }
 .popup_price {
@@ -156,18 +242,38 @@
 	p {
 		color: $dark-orange;
 		font-size: 2.5rem;
-		font-weight: 700;
+		font-family: $font_3;
+	}
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+	}
+	@include bp($point_5) {
+		p {
+			font-size: 2rem;
+		}
 	}
 }
 .popup_base {
 	max-height: 50rem;
 	overflow-y: scroll;
 	padding-right: 13rem;
+	@include bp($point_2) {
+		max-height: 35rem;
+		padding-right: 2rem;
+	}
 }
 .popup_txt {
 	margin-bottom: 6rem;
 	p {font-size: 1.8rem;
 		margin-bottom: 1rem;
+	}
+	@include bp($point_5) {
+		p {
+			font-size: 1.3rem;
+		}
+		span {
+			font-size: 1.3rem;
+		}
 	}
 }
 .popup_galery {
@@ -176,6 +282,9 @@
 		grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
 		grid-gap: 2rem;
 	}
+	@include bp($point_5) {
+		margin-bottom: 2rem;
+	}
 }
  .popup_form_i_btn {
 	button {
@@ -183,6 +292,12 @@
 		background: $gradient;
 		box-shadow: 0px 17px 20px rgba(224, 100, 0, 0.2);
 		border-radius: .5rem;
+		color: $white;
+	}
+	@include bp($point_5) {
+		button {
+			padding:1.3rem 4.9rem;
+		}
 	}
  }
 
