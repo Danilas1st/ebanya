@@ -68,6 +68,13 @@
 }
 .hero_main_btn {
 	margin-bottom: 12.5rem;
+	max-width: 33rem;
+	@include bp($point_2) {
+		margin-left: 33rem;
+	}
+	@include bp($point_5) {
+		margin: 0;
+	}
 	button {
 		font-family: $font_2;
 		background: $gradient;
@@ -287,7 +294,8 @@
 			box-shadow: 0px 17px 20px rgba(224, 100, 0, 0.2);
 		}
 		@include bp($point_5) {
-			padding: 1.5rem 2rem;
+			padding: 1rem 1.5rem;
+			font-size: 1.6rem;
 		}
 	}
 }
@@ -309,7 +317,8 @@
 			box-shadow: 0px 17px 20px rgba(224, 100, 0, 0.2);
 		}
 		@include bp($point_5) {
-			padding: 1.5rem 2rem;
+			padding: 1rem 2rem;
+			font-size: 1.6rem;
 		}
 	}
 }
@@ -326,6 +335,9 @@
 	margin-right: 3rem;
 	button {
 		font-family: $font_2;
+		@include bp($point_5) {
+			font-size: 1.6rem;
+		}
 	}
 }
 .catalog_btn_l {
@@ -344,6 +356,10 @@
 			background: linear-gradient(0deg, rgba(38, 38, 38, 0.3), rgba(38, 38, 38, 0.3)), 
 			linear-gradient(229.65deg, #FFD788 -14.31%, #DC5F05 76.5%);
 			box-shadow: 0px 17px 20px rgba(224, 100, 0, 0.2);
+		}
+		@include bp($point_5) {
+			width: 3.7rem;
+			height: 3.7rem;
 		}
 	}
 }
@@ -456,6 +472,9 @@
 		font-weight: 500;
 		font-family: $font_1;
 		color: $black;
+		@include bp($point_5) {
+			font-size: 1.4rem;
+		}
 	}
 	@include bp($point_2) {
 		input {
@@ -495,7 +514,7 @@
 	@include bp($point_5) {
 		button {
 			padding: 1.5rem 2rem;
-			font-size: 1.6rem;
+			font-size: 1.4rem;
 		}
 	}
 }
@@ -538,15 +557,24 @@
 .scheme_main {
 	ul {
 		display: flex;
+		align-items: center;
 		@include bp($point_5) {
 			flex-direction: column;
 		}
 	}
 	li {
+		&:nth-child(2n) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		&:not(:last-child) {
-			margin-right: 5.3rem;
+			margin-right: 7.3rem;
 			@include bp($point_2) {
-				margin: 1.1rem;
+				margin-right: 2.2rem;
+			}
+			@include bp($point_5) {
+				margin: 0;
 			}
 		}
 	}
@@ -587,13 +615,12 @@
 	}
 }
 .scheme_main_ar {
-	margin-top: 12rem;
 	img {
 		width: 1rem;
 		height: 1.8rem;
 	}
 	@include bp($point_5) {
-		margin: 1rem 1rem 1rem 16rem;
+		margin: 1rem 0;
 		img {
 			rotate: 90deg;
 		}

@@ -50,3 +50,39 @@
 			.popup_form_i_btn.trigger(data-target="form")
 				button(type="button") Заказать
 
+
+.popup.popup_menu(data-id="menu")
+	.popup_form_bg_m.close_popups.remove 
+	.popup_form_m
+		.popup_close_m.close_popups.remove 
+			button(type="button")
+				+icon('close')
+		.popup_menu_head 
+			.popup_logo 
+				a(href="#")
+					img(src="i/logo.png", alt="")
+		.popup_menu 
+			ul 
+				li 
+					a(href="#") Каталог 
+				li 
+					a(href="#") Схема работы
+				li 
+					a(href="#") FAQ
+				li 
+					a(href="#") Отзывы
+				li 
+					a(href="#") Контакты
+		.popup_social 
+			ul 
+				li
+					.popup_social_wh
+						a(href="#")
+							img(src="i/icons/whatsapp.png", alt="") 
+				li
+					.popup_social_tg 
+						a(href="#")
+							img(src="i/icons/telegram.png", alt="") 
+		.popup_tel 
+			a(href="#")
+				p  +7 996 975 69 19

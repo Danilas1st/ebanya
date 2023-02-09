@@ -49,17 +49,24 @@
 	}
 }
 .header_social {
-	@include bp($point_5) {
+	@include bp($point_2){
 		display: none;
 	}
+	@include bp($point_5) {
+		display: none;
+		}
 	ul {
 		display: flex;
+		@include bp($point_2) {
+			justify-content: space-evenly;
+		}
 		}
 	li {
 		&:not(:last-child) {
 				margin-right: 2.5rem;
+			}
 		}
-	}
+}
 	.header_social_wh {
 		border-radius: 4rem;
 		height: 5rem;
@@ -98,7 +105,6 @@
 				transform: scale(1.1);
 			}
 		}
-	}
 .header_tel {
 	@include bp($point_5) {
 		display: none;

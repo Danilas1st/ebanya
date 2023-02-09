@@ -291,27 +291,3 @@ function failed(failed) {
 			$(failed).removeClass('active')
 		}, 3000)
 }
-
-
-
-
-function burgerMobile() {
-	const triggerBurger = document.querySelector('.burger_trigger')
-	const burgerPopup = document.querySelector('.burger')
-	const burgerFail = document.querySelectorAll('.close_burger')
-
-	triggerBurger.addEventListener('click', (e) => {
-		burgerPopup.classList.add('active')
-		if(e.target.classList.contains('burger_trigger')) {
-			e.target.classList.add('active')
-		}
-	})
-
-	burgerFail.forEach(item => {
-		item.addEventListener('click', () => {
-			burgerPopup.classList.remove('active')
-			triggerBurger.classList.remove('active')
-			win.style.overflow = "";
-		})
-	});
-}

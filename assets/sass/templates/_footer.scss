@@ -31,10 +31,17 @@
 		margin: 0;
 		p {
 			text-align: center;
+			font-size: 1.6rem;
 		}
 	}
 }
 .footer_policy {
+	@include bp($point_5) {
+		font-size: 1.6rem;
+	}
 }
 .footer_arkada {
+	@include bp($point_5) {
+		max-width: 20rem;
+	}
 }
