@@ -36,6 +36,7 @@
 		}
 		&:hover {
 			transform: scale(1.1);
+			transition: all .3s;
 		}
 	}
 	a {
@@ -83,6 +84,7 @@
 		}
 		&:hover {
 			transform: scale(1.1);
+			transition: all .3s;
 		}
 	}
 	.header_social_tg {
@@ -102,6 +104,7 @@
 			}
 			&:hover {
 				transform: scale(1.1);
+				transition: all .3s;
 			}
 		}
 .header_tel {
@@ -114,6 +117,7 @@
 		font-family: $font_3;
 		&:hover {
 			transform: scale(1.1);
+			transition: all .3s;
 		}
 	}
 }
@@ -125,6 +129,7 @@
 		border-bottom: .1rem dashed $black;
 		&:hover {
 			transform: scale(1.1);
+			transition: all .3s;
 		}
 	}
 }
