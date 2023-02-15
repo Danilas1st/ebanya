@@ -41,6 +41,7 @@
 	}
 	@include bp($point_5) {
 		padding: 2rem 4.4rem;
+		margin: 0 7.5rem;
 	}
 }
 .popup_close {
@@ -323,7 +324,7 @@
 }
 .popup_menu {
 	li {
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 	}
 	a {
 		color: $black;
@@ -335,8 +336,9 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 35%;
+	width: 100%;
 	height: 100%;
+	opacity: .9;
 	background: #F5F5F5;
 	@include bp($point_5) {
 		width: 100%;
@@ -351,11 +353,17 @@
 	position: absolute;
 	top: 1rem;
 	left: 1rem;
+	background: $white;
+	border-radius: 1rem;
+	padding: 4rem 7rem;
+	@include bp($point_5) {
+		padding: 4rem 3rem;
+	}
 }
 .popup_close_m {
 	position: absolute;
-	top: .5rem;
-	right: -6.5rem;
+	top: 1.5rem;
+	right: 1.5rem;
 	button {
 		color: #DC5F05;
 	}

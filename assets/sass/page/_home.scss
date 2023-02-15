@@ -15,9 +15,6 @@
 	}
 }
 .hero_main {
-	@include bp($point_2) {
-		padding-bottom: 24rem;
-	}
 }
 .hero_main_top {
 	h1 {
@@ -25,6 +22,7 @@
 	}
 	@include bp($point_2) {
 		text-align: center;
+		padding-bottom: 2rem;
 		h1 {
 			padding-top: 15.7rem;
 		}
@@ -67,14 +65,6 @@
 	}
 }
 .hero_main_btn {
-	margin-bottom: 12.5rem;
-	max-width: 33rem;
-	@include bp($point_2) {
-		margin-left: 33rem;
-	}
-	@include bp($point_5) {
-		margin: 0;
-	}
 	button {
 		font-family: $font_2;
 		background: $gradient;
@@ -95,11 +85,8 @@
 			padding: 1.5rem 2rem;
 			border-radius: .5rem;
 		}
+		}
 	}
-	@include bp($point_2) {
-		margin-bottom: -16.5rem;
-	}
-}
 .hero_main_bottom {
 	ul {
 		display: grid;
@@ -373,23 +360,18 @@
 		height: 100%;
 		background: url('../../i/BG2.png') no-repeat center / cover;
 		z-index: -1;
-		@include bp($point_2) {
-		}
+	}
+	@include bp($point_2) {
+		display: none;
 	}
 }
 .order_main {
-	padding-bottom: 100rem;
-	@include bp($point_2) {
-		padding-bottom: 65rem;
-	}
-	@include bp($point_5) {
-		padding-bottom: 45rem;
-	}
 }
 .order_img {
-	position: absolute;
-	left: 15rem;
-	top: 6rem;
+	position: relative;
+	max-width: 120rem;
+	right: 18rem;
+	top: 0;
 	z-index: 1;
 	@include bp($point_2) {
 		display: none;
@@ -533,7 +515,7 @@
 .scheme_main_w {
 	padding: 20rem 0 20.5rem 0;
 	@include bp($point_2) {
-		padding: 8rem 0 6rem 0;
+		padding: 3rem 0 6rem 0;
 	}
 }
 .scheme_head {
@@ -557,7 +539,6 @@
 .scheme_main {
 	ul {
 		display: flex;
-		align-items: center;
 		@include bp($point_5) {
 			flex-direction: column;
 		}
@@ -838,10 +819,14 @@
 	}
 }
 .contact_main_w {
+	height: 98rem;
 	position: relative;
 	margin-bottom: 2.6rem;
+	@include bp($point_2) {
+		max-height: 70rem;
+	} 
 	@include bp($point_5) {
-		position: static;
+		max-height: 35rem;
 	}
 }
 .contact_map {
