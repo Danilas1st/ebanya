@@ -39,8 +39,7 @@
 		}
 	}
 	a {
-		font-family: $font_1;
-		font-weight: 500;
+		font-family: $font_2;
 	}
 	@include bp($point_2) {
 		&:not(:last-child) {
